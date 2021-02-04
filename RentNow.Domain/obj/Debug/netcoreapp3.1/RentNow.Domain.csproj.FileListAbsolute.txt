@@ -1,0 +1,9 @@
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\bin\Debug\netcoreapp3.1\RentNow.Domain.deps.json
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\bin\Debug\netcoreapp3.1\RentNow.Domain.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\bin\Debug\netcoreapp3.1\RentNow.Domain.pdb
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.csprojAssemblyReference.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.AssemblyInfoInputs.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.AssemblyInfo.cs
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.csproj.CoreCompileInputs.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Domain\obj\Debug\netcoreapp3.1\RentNow.Domain.pdb

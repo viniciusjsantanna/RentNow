@@ -1,0 +1,17 @@
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Infrastructure.deps.json
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Infrastructure.runtimeconfig.json
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Infrastructure.runtimeconfig.dev.json
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Infrastructure.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Infrastructure.pdb
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Application.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Domain.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Application.pdb
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\bin\Debug\netcoreapp3.1\RentNow.Domain.pdb
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.csprojAssemblyReference.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.AssemblyInfo.cs
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.csproj.CopyComplete
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.pdb
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Infrastructure\obj\Debug\netcoreapp3.1\RentNow.Infrastructure.genruntimeconfig.cache
