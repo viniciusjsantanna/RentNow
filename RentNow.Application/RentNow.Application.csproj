@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\CarModels\" />
     <Folder Include="CQRS\Vehicles\" />
     <Folder Include="CQRS\Users\" />
   </ItemGroup>
