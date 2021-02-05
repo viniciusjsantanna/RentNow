@@ -30,5 +30,10 @@ namespace RentNow.Domain.ValueObjects
         {
             return HashCode.Combine(plate);
         }
+
+        public override string ToString()
+        {
+            return plate.ToString();
+        }
     }
 }

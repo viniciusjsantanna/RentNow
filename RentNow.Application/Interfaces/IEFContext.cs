@@ -12,6 +12,7 @@ namespace RentNow.Application.Interfaces
     {
         DbSet<Brand> Brand { get; set; }
         DbSet<CarModel> CarModel { get; set; }
+        DbSet<Vehicle> Vehicle { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

@@ -51,15 +51,15 @@ namespace RentNow.Infrastructure.Mapping
                 {
                     e.Property(e => e.trunkLimit)
                         .HasColumnName("TRUNK_LIMIT")
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("int");
                 });
 
             builder.Property(e => e.Fuel)
-                .HasConversion<string>()
+                .HasConversion<int>()
                 .HasColumnName("FUEL");
 
             builder.Property(e => e.Category)
-                .HasConversion<string>()
+                .HasConversion<int>()
                 .HasColumnName("CATEGORY");
 
             builder.HasOne(e => e.CarBrand)

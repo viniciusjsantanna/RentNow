@@ -30,5 +30,14 @@ namespace RentNow.Domain.ValueObjects
 
         public static implicit operator HourPrice(decimal hourPrice)
             => new HourPrice(hourPrice);
+
+        public string ToString(string format)
+        {
+            if (!string.IsNullOrEmpty(format))
+            {
+                return hourPrice.ToString(format);
+            }
+            return hourPrice.ToString();
+        }
     }
 }

@@ -10,12 +10,12 @@ namespace RentNow.Domain.ValueObjects
         {
         }
 
-        public TrunkLimit(string trunkLimit)
+        public TrunkLimit(int trunkLimit)
         {
             this.trunkLimit = trunkLimit;
         }
 
-        public string trunkLimit { get; set; }
+        public int trunkLimit { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -28,7 +28,12 @@ namespace RentNow.Domain.ValueObjects
             return HashCode.Combine(trunkLimit);
         }
 
-        public static implicit operator TrunkLimit(string trunkLimit)
+        public static implicit operator TrunkLimit(int trunkLimit)
             => new TrunkLimit(trunkLimit);
+
+        public override string ToString()
+        {
+            return trunkLimit.ToString() + " Litros";
+        }
     }
 }

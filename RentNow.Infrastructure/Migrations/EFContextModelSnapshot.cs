@@ -119,14 +119,12 @@ namespace RentNow.Infrastructure.Migrations
                     b.Property<Guid?>("CAR_MODEL_KEY")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                    b.Property<int>("Category")
+                        .HasColumnType("int")
                         .HasColumnName("CATEGORY");
 
-                    b.Property<string>("Fuel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                    b.Property<int>("Fuel")
+                        .HasColumnType("int")
                         .HasColumnName("FUEL");
 
                     b.HasKey("Key");
@@ -377,8 +375,8 @@ namespace RentNow.Infrastructure.Migrations
                             b1.Property<Guid>("VehicleKey")
                                 .HasColumnType("uniqueidentifier");
 
-                            b1.Property<string>("trunkLimit")
-                                .HasColumnType("varchar(50)")
+                            b1.Property<int>("trunkLimit")
+                                .HasColumnType("int")
                                 .HasColumnName("TRUNK_LIMIT");
 
                             b1.HasKey("VehicleKey");
