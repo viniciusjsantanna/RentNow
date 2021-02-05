@@ -39,5 +39,10 @@ namespace RentNow.Domain.ValueObjects
             }
             return hourPrice.ToString();
         }
+
+        public decimal ToDecimal()
+        {
+            return hourPrice;
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace RentNow.Application.DTOs.Vehicle
 {
     public class VehicleDTO
     {
+        public Guid Key { get; set; }
         public string Plate { get; set; }
         public string CarBrandName { get; set; }
         public string CarModelName { get; set; }

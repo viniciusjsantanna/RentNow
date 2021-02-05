@@ -11,7 +11,6 @@ namespace RentNow.Application.CQRS.Vehicles.Commands.Register
     {
         public string Plate { get; set; }
         public int Year { get; set; }
-        public Guid CarBandKey { get; set; }
         public Guid CarModelKey { get; set; }
         public FuelType Fuel { get; set; }
         public int TrunkLimit { get; set; }

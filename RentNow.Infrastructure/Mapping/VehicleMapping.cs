@@ -62,10 +62,6 @@ namespace RentNow.Infrastructure.Mapping
                 .HasConversion<int>()
                 .HasColumnName("CATEGORY");
 
-            builder.HasOne(e => e.CarBrand)
-                .WithMany()
-                .HasForeignKey("CAR_BRAND_KEY");
-
             builder.HasOne(e => e.CarModel)
                 .WithMany()
                 .HasForeignKey("CAR_MODEL_KEY");

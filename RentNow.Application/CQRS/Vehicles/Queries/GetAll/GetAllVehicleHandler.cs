@@ -27,8 +27,8 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetAll
         public async Task<IResponse> Handle(GetAllVehicleQuery request, CancellationToken cancellationToken)
         {
             var listVehicle = mapper.Map<IList<VehicleDTO>>(context.Vehicle
-                                                                   .Include(e => e.CarBrand)
                                                                    .Include(e => e.CarModel)
+                                                                   .ThenInclude(e => e.CarBrand)
                                                                    .ToListAsync().Result);
 
             return await response.Generate(collections: listVehicle);

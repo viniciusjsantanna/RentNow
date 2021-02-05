@@ -30,5 +30,15 @@ namespace RentNow.Domain.ValueObjects
 
         public static implicit operator Cpf(string cpf)
             => new Cpf(cpf);
+
+        public override string ToString()
+        {
+            var part1 = cpf.Substring(0, 3);
+            var part2 = cpf.Substring(3, 3);
+            var part3 = cpf.Substring(6, 3);
+            var part4 = cpf.Substring(9);
+
+            return part1 + "." + part2 + "." + part3 + "-" + part4;
+        }
     }
 }

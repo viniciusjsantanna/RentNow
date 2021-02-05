@@ -106,15 +106,34 @@ namespace RentNow.Infrastructure.Migrations
                     b.ToTable("OPERATOR");
                 });
 
-            modelBuilder.Entity("RentNow.Domain.Entities.Vehicle", b =>
+            modelBuilder.Entity("RentNow.Domain.Entities.Scheduling", b =>
                 {
                     b.Property<Guid>("Key")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("KEY");
 
-                    b.Property<Guid?>("CAR_BRAND_KEY")
+                    b.Property<Guid?>("CLIENTEKEY")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("VEHICLEKEY")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Key");
+
+                    b.HasIndex("CLIENTEKEY");
+
+                    b.HasIndex("VEHICLEKEY");
+
+                    b.ToTable("SCHEDULING");
+                });
+
+            modelBuilder.Entity("RentNow.Domain.Entities.Vehicle", b =>
+                {
+                    b.Property<Guid>("Key")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("KEY");
 
                     b.Property<Guid?>("CAR_MODEL_KEY")
                         .HasColumnType("uniqueidentifier");
@@ -128,8 +147,6 @@ namespace RentNow.Infrastructure.Migrations
                         .HasColumnName("FUEL");
 
                     b.HasKey("Key");
-
-                    b.HasIndex("CAR_BRAND_KEY");
 
                     b.HasIndex("CAR_MODEL_KEY");
 
@@ -326,12 +343,42 @@ namespace RentNow.Infrastructure.Migrations
                     b.Navigation("Registration");
                 });
 
+            modelBuilder.Entity("RentNow.Domain.Entities.Scheduling", b =>
+                {
+                    b.HasOne("RentNow.Domain.Entities.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("CLIENTEKEY");
+
+                    b.HasOne("RentNow.Domain.Entities.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VEHICLEKEY");
+
+                    b.OwnsOne("RentNow.Domain.ValueObjects.Hours", "TotalHours", b1 =>
+                        {
+                            b1.Property<Guid>("SchedulingKey")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<int>("hours")
+                                .HasColumnType("int")
+                                .HasColumnName("TOTAL_HOURS");
+
+                            b1.HasKey("SchedulingKey");
+
+                            b1.ToTable("SCHEDULING");
+
+                            b1.WithOwner()
+                                .HasForeignKey("SchedulingKey");
+                        });
+
+                    b.Navigation("Client");
+
+                    b.Navigation("TotalHours");
+
+                    b.Navigation("Vehicle");
+                });
+
             modelBuilder.Entity("RentNow.Domain.Entities.Vehicle", b =>
                 {
-                    b.HasOne("RentNow.Domain.Entities.Brand", "CarBrand")
-                        .WithMany()
-                        .HasForeignKey("CAR_BRAND_KEY");
-
                     b.HasOne("RentNow.Domain.Entities.CarModel", "CarModel")
                         .WithMany()
                         .HasForeignKey("CAR_MODEL_KEY");
@@ -403,8 +450,6 @@ namespace RentNow.Infrastructure.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("VehicleKey");
                         });
-
-                    b.Navigation("CarBrand");
 
                     b.Navigation("CarModel");
 

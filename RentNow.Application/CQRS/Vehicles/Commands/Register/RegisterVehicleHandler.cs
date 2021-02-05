@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using RentNow.Application.Interfaces;
 using RentNow.Domain.Entities;
 using System;
@@ -24,8 +25,7 @@ namespace RentNow.Application.CQRS.Vehicles.Commands.Register
         public async Task<IResponse> Handle(RegisterVehicleCommand request, CancellationToken cancellationToken)
         {
             var vehicle = mapper.Map<Vehicle>(request);
-            vehicle.CarBrand = context.Brand.FindAsync(request.CarBandKey).Result;
-            vehicle.CarModel = context.CarModel.FindAsync(request.CarModelKey).Result;
+            vehicle.CarModel = context.CarModel.Include(e => e.CarBrand).FirstOrDefaultAsync(e => e.Key.Equals(request.CarModelKey)).Result;
 
             await context.Vehicle.AddAsync(vehicle);
             var row = context.SaveChangesAsync(cancellationToken).Result;
@@ -33,7 +33,7 @@ namespace RentNow.Application.CQRS.Vehicles.Commands.Register
             {
                 return await response.Generate(hasError: true, message: $"Não foi possível cadastrar o veículo informado!");
             }
-            return await response.Generate(message: $"O Veículo {vehicle.CarBrand.Name} {vehicle.CarModel.Name} foi cadastrado com sucesso!");
+            return await response.Generate(message: $"O Veículo {vehicle.CarModel.CarBrand.Name} {vehicle.CarModel.Name} foi cadastrado com sucesso!");
         }
     }
 }

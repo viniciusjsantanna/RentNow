@@ -14,6 +14,9 @@ namespace RentNow.Infrastructure.Context
         public DbSet<Brand> Brand { get; set; }
         public DbSet<CarModel> CarModel { get; set; }
         public DbSet<Vehicle> Vehicle { get; set; }
+        public DbSet<Scheduling> Scheduling { get; set; }
+        public DbSet<Client> Client { get; set; }
+        public DbSet<Operator> Operator { get; set; }
 
         public EFContext(DbContextOptions<EFContext> options): base(options){}
 
