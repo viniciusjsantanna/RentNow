@@ -23,6 +23,11 @@ namespace RentNow.Domain.ValueObjects
                    this.year == year.year;
         }
 
+        public int ToInt()
+        {
+            return this.year;
+        }
+
         public override int GetHashCode()
         {
             return HashCode.Combine(year);

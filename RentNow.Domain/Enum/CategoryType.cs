@@ -10,7 +10,7 @@ namespace RentNow.Domain.Enum
         [Description("Básico")]
         Basic = 1,
         [Description("Completo")]
-        Complet = 2,
+        Complete = 2,
         [Description("Luxo")]
         Lux = 3
     }
