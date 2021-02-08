@@ -5,11 +5,12 @@ using System.Text;
 
 namespace RentNow.Application.Pattern.Strategy.Category
 {
-    public class BasicConcreteCalculate : ICategoryCalculate
+    public class CompleteConcrete : ICategoryHandler
     {
         public decimal Calculate(decimal price)
         {
-            return price;
+            var percents = price * 0.5M;
+            return price + percents;
         }
     }
 }

@@ -14,9 +14,9 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetChecklistPrice
         private readonly IResponse response;
         private readonly IEFContext context;
         private readonly IMapper mapper;
-        private readonly CategoryContext categoryContext;
+        private readonly ICategoryContext categoryContext;
 
-        public GetChecklistPriceHandler(IResponse response, IEFContext context, IMapper mapper, CategoryContext categoryContext)
+        public GetChecklistPriceHandler(IResponse response, IEFContext context, IMapper mapper, ICategoryContext categoryContext)
         {
             this.response = response;
             this.context = context;

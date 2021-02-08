@@ -12,6 +12,8 @@ C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\FluentAssertions.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
@@ -25,6 +27,9 @@ C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -39,6 +44,7 @@ C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\Users\139988\Desktop\RentNow\RentNow\RentNow.Qa.Tests\bin\Debug\netcoreapp3.1\xunit.assert.dll

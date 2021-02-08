@@ -8,10 +8,10 @@ using System.Text;
 
 namespace RentNow.Application.Pattern.Strategy.Category
 {
-    public class CategoryContext
+    public class CategoryContext : ICategoryContext
     {
-        private readonly IEnumerable<ICategoryCalculate> categories;
-        public CategoryContext(IEnumerable<ICategoryCalculate> categories)
+        private readonly IEnumerable<ICategoryHandler> categories;
+        public CategoryContext(IEnumerable<ICategoryHandler> categories)
         {
             this.categories = categories;
         }
@@ -19,15 +19,13 @@ namespace RentNow.Application.Pattern.Strategy.Category
         public decimal GetCurrentCategoryCalculate(decimal price, int totalHours, string category)
         {
             var concrete = categories.Where(e => e.GetType().Name.Contains(category)).FirstOrDefault();
-            var TotalPrice = concrete.Calculate(price * totalHours);
-            return TotalPrice;
+            return concrete.Calculate(price * totalHours); 
         }
 
         public decimal GetCurrentCategoryCalculate(decimal price, string category)
         {
             var concrete = categories.Where(e => e.GetType().Name.Contains(category)).FirstOrDefault();
-            var TotalPrice = concrete.Calculate(price);
-            return TotalPrice;
+            return concrete.Calculate(price); 
         }
 
 
