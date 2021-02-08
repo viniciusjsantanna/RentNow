@@ -15,9 +15,9 @@ namespace RentNow.Application.CQRS.Schedules.Queries.GetAll
         private readonly IResponse response;
         private readonly IEFContext context;
         private readonly IMapper mapper;
-        private readonly CategoryContext categoryContext;
+        private readonly ICategoryContext categoryContext;
 
-        public GetAllScheduleHandler(IResponse response, IEFContext context, IMapper mapper, CategoryContext categoryContext)
+        public GetAllScheduleHandler(IResponse response, IEFContext context, IMapper mapper, ICategoryContext categoryContext)
         {
             this.response = response;
             this.context = context;
@@ -31,8 +31,7 @@ namespace RentNow.Application.CQRS.Schedules.Queries.GetAll
             var listSchedule = mapper.Map<List<ScheduleDTO>>(schedules);
             listSchedule.ForEach(e =>
             {
-                var price = categoryContext.GetCurrentCategoryCalculate(e.HourPrice, e.TotalHours, e.Category.ToString());
-                e.TotalPrice = price.ToString("C");
+                e.TotalPrice = categoryContext.GetCurrentCategoryCalculate(e.HourPrice, e.TotalHours, e.Category.ToString()).ToString("C");
             });
 
             return await response.Generate(collections: listSchedule);

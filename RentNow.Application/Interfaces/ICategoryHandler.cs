@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RentNow.Application.Interfaces
 {
-    public interface ICategoryCalculate
+    public interface ICategoryHandler
     {
         decimal Calculate(decimal price); 
     }

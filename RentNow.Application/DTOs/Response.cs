@@ -12,12 +12,20 @@ namespace RentNow.Application.DTOs
         public object collections { get; set; }
         public bool hasError { get; set; }
 
+        public IList<string> listMessages { get; set; } = new List<string>();
+
         public Task<IResponse> Generate(string message = null, object collections = null, bool hasError = false)
         {
             this.message = message;
             this.collections = collections;
             this.hasError = hasError;
             return Task.FromResult((IResponse)this);
+        }
+
+        public void AddMessagesToList(string message)
+        {
+            listMessages.Add(message);
+            this.hasError = true;
         }
     }
 }

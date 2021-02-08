@@ -10,5 +10,7 @@ namespace RentNow.Application.Interfaces
         bool hasError { get; set; }
         string message { get; set; }
         Task<IResponse> Generate(string message = default, object collections = default, bool hasError = default);
+
+        void AddMessagesToList(string message);
     }
 }

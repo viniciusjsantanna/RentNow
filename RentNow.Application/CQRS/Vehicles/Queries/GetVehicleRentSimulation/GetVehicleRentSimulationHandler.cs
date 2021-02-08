@@ -15,9 +15,9 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetVehicleRentSimulation
         private readonly IResponse response;
         private readonly IEFContext context;
         private readonly IMapper mapper;
-        private readonly CategoryContext categoryContext;
+        private readonly ICategoryContext categoryContext;
 
-        public GetVehicleRentSimulationHandler(IResponse response, IEFContext context, IMapper mapper, CategoryContext categoryContext)
+        public GetVehicleRentSimulationHandler(IResponse response, IEFContext context, IMapper mapper, ICategoryContext categoryContext)
         {
             this.response = response;
             this.context = context;
@@ -32,10 +32,10 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetVehicleRentSimulation
             {
                 return await response.Generate(hasError: true, message: $"Não foi possível encontrar o carro solicitado!");
             }
-
+            
             var simulation = mapper.Map<VehicleRentSimulationDTO>(chooseVehicle);
-            var price = categoryContext.GetCurrentCategoryCalculate(chooseVehicle.RentSimulation(request.TotalHours), chooseVehicle.Category.ToString());
-            simulation.TotalPrice = price.ToString("C");
+            simulation.TotalPrice = categoryContext.GetCurrentCategoryCalculate(chooseVehicle.RentSimulation(request.TotalHours), chooseVehicle.Category.ToString()).ToString("C");
+           
             return await response.Generate(collections: simulation);
         }
 
