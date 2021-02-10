@@ -17,6 +17,6 @@ Percentual de acréscimo por categoria.<br>
 Tomei a liberdade de acrescentar um percentual extra de acordo com a categoria do veículo. <br>
 Categorias: <br>
     Básico = Não tem acrescimo. <br>
-    Completa = 50% do valor. <br>
+    Completo = 50% do valor. <br>
     Luxo = 80% do valor.
       
