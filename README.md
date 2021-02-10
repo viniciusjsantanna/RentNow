@@ -12,6 +12,15 @@
   Com a aplicação já rodando podemos criar clientes e operadores através das rotas /api/Client e /api/Operator utilizando o swagger, em seguinte podemos
   fazer o login e será retornado um JWT para assim poder acessar as outras rotas, então a partir dai utilize o token em todas as requisições para ter 
   autorização nas rotas.
+  
+  # Login
+    Foi utilizado o strategy pattern na autenticação, com isso o sistema consegue identificar quando está sendo realizado um login de cliente
+    ou quando está sendo realizado um login de operador para isso é necessário passar as informações citadas na observação.
+    OBS.: Para realizar o login é necessário informar qual é a Role.
+    Role:
+        Operador = 1,
+        Client = 2
+ 
 <br><br>
 # Percentual de acréscimo por categoria.<br>
      Tomei a liberdade de acrescentar um percentual extra de acordo com a categoria do veículo.
