@@ -13,7 +13,7 @@ Passo a Passo para rodar o projeto.
   fazer o login e será retornado um JWT para assim poder acessar as outras rotas, então a partir dai utilize o token em todas as requisições para ter 
   autorização nas rotas.
 <br><br>
-Percentual de acrescimo por categoria.<br>
+Percentual de acréscimo por categoria.<br>
 Tomei a liberdade de acrescentar um percentual extra de acordo com a categoria do veículo. <br>
 Categorias: <br>
     Básico = Não tem acrescimo. <br>
