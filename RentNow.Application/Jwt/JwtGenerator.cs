@@ -15,6 +15,16 @@ namespace RentNow.Application.Jwt
 {
     public class JwtGenerator : ITokenGenerator
     {
+        //    "Issuer": "https://localhost:5001",
+        //"Secret": "VeryHyperMegaSuperSecretKey",
+        //"ExpirationInMinutes": 60,
+        //"Audience": [
+        //  "https://localhost:5001"
+        //]
+        private const string Issuer = "https://localhost:5001";
+        private const string Secret = "VeryHyperMegaSuperSecretKey";
+        private const int ExpirationInMinutes = 60;
+        private const string Audience = "https://localhost:5001";
         private readonly JwtSettings jwtSettings;
         public JwtGenerator(IOptionsSnapshot<JwtSettings> jwtSettings)
         {
@@ -25,12 +35,12 @@ namespace RentNow.Application.Jwt
         {
             var listClaims = GetUserClaims(user);
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Secret));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings.ExpirationInMinutes));
+            var expires = DateTime.Now.AddMinutes(Convert.ToDouble(ExpirationInMinutes));
 
             var token = new JwtSecurityToken(
-                    issuer: jwtSettings.Issuer,
+                    issuer: Issuer,
                     claims: listClaims,
                     expires: expires,
                     signingCredentials: creds
@@ -51,7 +61,7 @@ namespace RentNow.Application.Jwt
                 new Claim(JwtRegisteredClaimNames.Sub, user.Key.ToString()),
                 new Claim(ClaimTypes.Name, user.Credentials.Login),
                 new Claim(ClaimTypes.Role, user.Role.ToString()),
-                new Claim(JwtRegisteredClaimNames.Aud, jwtSettings.Audience[0]),
+                new Claim(JwtRegisteredClaimNames.Aud, Audience),
             };
         }
     }

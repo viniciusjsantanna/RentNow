@@ -14,8 +14,10 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetRentContractModel
         public Task<IResponse> Handle(GetRentContractModelQuery request, CancellationToken cancellationToken)
         {
             var path = Path.Combine(
-                     Directory.GetCurrentDirectory(),
-                     "wwwroot", request.FileName);
+                    "C:\\Users\\139988\\Desktop\\RentNow\\RentNow\\RentNow.Application\\RentContract\\", request.FileName);
+
+            FileInfo fi = new FileInfo(path);
+
             throw new NotImplementedException();
         }
     }
