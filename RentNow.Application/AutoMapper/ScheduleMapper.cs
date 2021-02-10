@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using RentNow.Application.CQRS.Schedules.Commands.Register;
 using RentNow.Application.DTOs.Schedule;
+using RentNow.Application.Extensions.Enum;
 using RentNow.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,8 @@ namespace RentNow.Application.AutoMapper
                 .ForMember(e => e.Cpf, opt => opt.MapFrom(e => e.Client.Cpf.ToString()))
                 .ForMember(e => e.TotalHours, opt => opt.MapFrom(e => e.TotalHours.ToInt()))
                 .ForMember(e => e.VehicleFullName, opt => opt.MapFrom(e => $"{e.Vehicle.CarModel.CarBrand.Name} {e.Vehicle.CarModel.Name}"))
-                .ForMember(e => e.HourPrice, opt => opt.MapFrom(e => e.Vehicle.HourPrice.ToDecimal()))
-                .ForMember(e => e.Category, opt => opt.MapFrom(e => e.Vehicle.Category))
+                .ForMember(e => e.HourPrice, opt => opt.MapFrom(e => e.Vehicle.HourPrice.ToString("C")))
+                .ForMember(e => e.Category, opt => opt.MapFrom(e => e.Vehicle.Category.GetDescription()))
                 .ForAllOtherMembers(e => e.Ignore());
         }
     }

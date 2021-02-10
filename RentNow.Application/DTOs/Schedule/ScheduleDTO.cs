@@ -13,7 +13,7 @@ namespace RentNow.Application.DTOs.Schedule
         public int TotalHours { get; set; }
         public string VehicleFullName { get; set; }
         public string TotalPrice { get; set; }
-        public decimal HourPrice { get; set; }
-        public CategoryType Category { get; set; }
+        public string HourPrice { get; set; }
+        public string Category { get; set; }
     }
 }

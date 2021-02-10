@@ -5,6 +5,7 @@ using RentNow.Application.DTOs.Schedule;
 using RentNow.Application.Interfaces;
 using RentNow.Application.Pattern.Strategy.Category;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,7 +32,8 @@ namespace RentNow.Application.CQRS.Schedules.Queries.GetAll
             var listSchedule = mapper.Map<List<ScheduleDTO>>(schedules);
             listSchedule.ForEach(e =>
             {
-                e.TotalPrice = categoryContext.GetCurrentCategoryCalculate(e.HourPrice, e.TotalHours, e.Category.ToString()).ToString("C");
+                var vehicle = schedules.Where(e => e.Key.Equals(e.Key)).Select(e => e.Vehicle).FirstOrDefault();
+                e.TotalPrice = categoryContext.GetCurrentCategoryCalculate(vehicle.HourPrice.ToDecimal(), e.TotalHours, vehicle.Category.ToString()).ToString("C");
             });
 
             return await response.Generate(collections: listSchedule);

@@ -15,22 +15,11 @@ namespace RentNow.Application.Jwt
 {
     public class JwtGenerator : ITokenGenerator
     {
-        //    "Issuer": "https://localhost:5001",
-        //"Secret": "VeryHyperMegaSuperSecretKey",
-        //"ExpirationInMinutes": 60,
-        //"Audience": [
-        //  "https://localhost:5001"
-        //]
         private const string Issuer = "https://localhost:5001";
         private const string Secret = "VeryHyperMegaSuperSecretKey";
         private const int ExpirationInMinutes = 60;
         private const string Audience = "https://localhost:5001";
-        private readonly JwtSettings jwtSettings;
-        public JwtGenerator(IOptionsSnapshot<JwtSettings> jwtSettings)
-        {
-            this.jwtSettings = jwtSettings.Value;
-        }
-
+       
         public Task<JsonWebToken> GenerateToken(User user)
         {
             var listClaims = GetUserClaims(user);
@@ -53,7 +42,6 @@ namespace RentNow.Application.Jwt
             });
 
         }
-
         private List<Claim> GetUserClaims(User user)
         {
             return new List<Claim>
