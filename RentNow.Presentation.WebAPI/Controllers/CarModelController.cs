@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RentNow.Application.CQRS.CarModels.Queries.GetAll;
 using RentNow.Application.CQRS.CarModels.Register;
@@ -9,6 +10,7 @@ namespace RentNow.Presentation.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CarModelController : ControllerBase
     {
         private readonly IMediator mediator;

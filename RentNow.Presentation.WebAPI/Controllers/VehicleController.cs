@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RentNow.Application.CQRS.Schedules.Commands.Register;
 using RentNow.Application.CQRS.Vehicles.Commands.Register;
@@ -9,14 +9,13 @@ using RentNow.Application.CQRS.Vehicles.Queries.GetRentContractModel;
 using RentNow.Application.CQRS.Vehicles.Queries.GetVehicleRentSimulation;
 using RentNow.Application.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace RentNow.Presentation.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class VehicleController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -45,12 +44,7 @@ namespace RentNow.Presentation.WebAPI.Controllers
             return mediator.Send(new GetVehicleRentSimulationQuery(vehicleKey, totalHours));
         }
 
-        [HttpPost]
-        [Route("Schedule")]
-        public Task<IResponse> RegisterSchedule(RegisterScheduleCommand command)
-        {
-            return mediator.Send(command);
-        }
+        
 
         [HttpGet]
         [Route("Checklist")]
@@ -61,9 +55,9 @@ namespace RentNow.Presentation.WebAPI.Controllers
 
         [HttpGet]
         [Route("Download")]
-        public Task<IResponse> DownloadRentContract(string fileName)
+        public Task<IResponse> DownloadRentContract()
         {
-            return mediator.Send(new GetRentContractModelQuery(fileName));
+            return mediator.Send(new GetRentContractModelQuery());
         }
     }
 }

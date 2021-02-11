@@ -84,6 +84,9 @@ namespace RentNow.Infrastructure.Migrations
                         .HasColumnType("varchar(200)")
                         .HasColumnName("PASSWORD");
 
+                    b.Property<string>("Salt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Key");
 
                     b.ToTable("CREDENTIALS");
