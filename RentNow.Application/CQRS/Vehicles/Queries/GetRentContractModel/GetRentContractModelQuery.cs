@@ -9,11 +9,6 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetRentContractModel
 {
     public class GetRentContractModelQuery : IRequest<IResponse>
     {
-        public GetRentContractModelQuery(string fileName)
-        {
-            FileName = fileName;
-        }
-
-        public string FileName { get; set; }
+       
     }
 }

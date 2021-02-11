@@ -18,8 +18,7 @@ namespace RentNow.Application.CQRS.Vehicles.Queries.GetRentContractModel
 
         public Task<IResponse> Handle(GetRentContractModelQuery request, CancellationToken cancellationToken)
         {
-            var path = Path.Combine(
-                    "C:\\Users\\139988\\Desktop\\RentNow\\RentNow\\RentNow.Application\\RentContract\\", request.FileName);
+            var path = "C:\\Users\\139988\\Desktop\\RentNow\\RentNow\\RentNow.Application\\RentContract\\Contrato de Aluguel.pdf";
 
             var stream = File.OpenRead(path);
             using (MemoryStream ms = new MemoryStream())

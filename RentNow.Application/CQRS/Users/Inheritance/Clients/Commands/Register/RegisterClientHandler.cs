@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using RentNow.Application.Interfaces;
 using RentNow.Domain.Entities;
 using System;
@@ -24,6 +25,12 @@ namespace RentNow.Application.CQRS.Users.Clients.Commands
         public async Task<IResponse> Handle(RegisterClientCommand request, CancellationToken cancellationToken)
         {
             var client = mapper.Map<Client>(request);
+            var existClient = context.Client.AnyAsync(e => e.Cpf.cpf.Equals(request.Cpf)).Result;
+
+            if (existClient)
+            {
+                return await response.Generate(hasError: true, message: $"O cliente dono do CPF {request.Cpf} já está cadastrado");
+            }
 
             await context.Client.AddAsync(client);
             var row = context.SaveChangesAsync(cancellationToken).Result;
