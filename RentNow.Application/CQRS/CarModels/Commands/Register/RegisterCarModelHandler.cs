@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using RentNow.Application.Interfaces;
 using RentNow.Domain.Entities;
 using System;
@@ -25,13 +26,20 @@ namespace RentNow.Application.CQRS.CarModels.Register
 
         public async Task<IResponse> Handle(RegisterCarModelCommand request, CancellationToken cancellationToken)
         {
+            var existModel = context.CarModel.AnyAsync(e => e.Name.name.Equals(request.Name)).Result;
             var brand = context.Brand.FindAsync(request.BrandKey).Result;
             var carModel = mapper.Map<CarModel>(request);
-            carModel.CarBrand = brand;
-            if(carModel is null)
+
+            if (existModel)
             {
-                return await response.Generate(hasError: true, message: $"Não foi possível cadastrar o modelo informado!");
+                return await response.Generate(hasError: true, message: $"O modelo {request.Name} já foi cadastrado!");
             }
+
+            if (brand is null )
+            {
+                return await response.Generate(hasError: true, message: $"Não foi possível encontrar a marca informada!");
+            }
+            carModel.CarBrand = brand;
 
             await context.CarModel.AddAsync(carModel);
             var row = context.SaveChangesAsync(cancellationToken).Result;

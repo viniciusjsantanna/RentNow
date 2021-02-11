@@ -9,5 +9,6 @@ namespace RentNow.Application.DTOs.Vehicle
         public string VehicleName { get; set; }
         public string UnitPrice { get; set; }
         public string TotalPrice { get; set; }
+        public string CategoryAditionalPercents { get; set; }
     }
 }

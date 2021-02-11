@@ -23,11 +23,22 @@ namespace RentNow.Application.CQRS.Schedules.Commands.Register
 
         public async Task<IResponse> Handle(RegisterScheduleCommand request, CancellationToken cancellationToken)
         {
+            var existVehicleSchedule = context.Scheduling.AnyAsync(e => e.Vehicle.Key.Equals(request.VehicleKey)).Result;
+            if (existVehicleSchedule)
+            {
+                return await response.Generate(hasError: true, message: $"O veículo informado já está agendado!");
+            }
+
             var schedule = mapper.Map<Scheduling>(request);
             schedule.Vehicle = context.Vehicle.FindAsync(request.VehicleKey).Result;
             schedule.Client = context.Client.FirstOrDefaultAsync(e => e.Cpf.cpf.Equals(request.Cpf)).Result;
 
             await ValidateSchedule(schedule);
+
+            if (response.hasError)
+            {
+                return response;
+            }
 
             await context.Scheduling.AddAsync(schedule);
             var row = context.SaveChangesAsync(cancellationToken).Result;

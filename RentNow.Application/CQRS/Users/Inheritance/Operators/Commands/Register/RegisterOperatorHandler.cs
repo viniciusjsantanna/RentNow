@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using RentNow.Application.Interfaces;
 using RentNow.Domain.Entities;
 using System;
@@ -26,6 +27,12 @@ namespace RentNow.Application.CQRS.Users.Inheritance.Operators.Commands
         public async Task<IResponse> Handle(RegisterOperatorCommand request, CancellationToken cancellationToken)
         {
             var op = mapper.Map<Operator>(request);
+            var existOperator = context.Operator.AnyAsync(e => e.Registration.registration.Equals(request.Registration)).Result;
+
+            if (existOperator)
+            {
+                return await response.Generate(hasError: true, message: $"O Operador de matricula {request.Registration} já está cadastrado");
+            }
 
             await context.Operator.AddAsync(op);
             var row = context.SaveChangesAsync(cancellationToken).Result;

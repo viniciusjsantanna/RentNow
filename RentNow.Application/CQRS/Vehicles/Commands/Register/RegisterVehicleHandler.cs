@@ -24,7 +24,13 @@ namespace RentNow.Application.CQRS.Vehicles.Commands.Register
 
         public async Task<IResponse> Handle(RegisterVehicleCommand request, CancellationToken cancellationToken)
         {
+            var existVehicle = context.Vehicle.AnyAsync(e => e.Plate.plate.Equals(request.Plate)).Result;
+            if (existVehicle)
+            {
+                return await response.Generate(hasError: true, message: $"O Veículo de placa {request.Plate} já foi cadastrado!");
+            }
             var vehicle = mapper.Map<Vehicle>(request);
+
             vehicle.CarModel = context.CarModel.Include(e => e.CarBrand).FirstOrDefaultAsync(e => e.Key.Equals(request.CarModelKey)).Result;
 
             await context.Vehicle.AddAsync(vehicle);

@@ -10,5 +10,6 @@ namespace RentNow.Application.CQRS.Users.Inheritance.Operators.Commands
     {
         public string Name { get; set; }
         public string Registration { get; set; }
+        public string Password { get; set; }
     }
 }

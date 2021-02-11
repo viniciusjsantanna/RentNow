@@ -18,11 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Users\Inheritance\Clients\Queries\" />
-    <Folder Include="CQRS\Users\Inheritance\Operators\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RentNow.Domain\RentNow.Domain.csproj" />
   </ItemGroup>
 

@@ -20,7 +20,7 @@ namespace RentNow.Application.Pattern.Strategy.Login
 
         public Task<User> Authenticate(string login, string password)
         {
-            var user = context.Operator.Where(e => e.Registration.registration.Equals(login)).FirstOrDefaultAsync().Result;
+            var user = context.Operator.Include(e => e.Credentials).Where(e => e.Registration.registration.Equals(login)).FirstOrDefaultAsync().Result;
             if (user is null || user.Credentials is null || !user.Credentials.isAuthentic(password))
             {
                 return null;
