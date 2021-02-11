@@ -5,23 +5,19 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{49F68ABB-C6CC-4AC1-B1EE-DD0358906B1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentNow.Domain", "RentNow.Domain\RentNow.Domain.csproj", "{951D1556-149B-4FD7-8B13-F25A22B26A4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentNow.Domain", "RentNow.Domain\RentNow.Domain.csproj", "{951D1556-149B-4FD7-8B13-F25A22B26A4E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7B7F5239-0E04-4B9E-87E2-E196DB300844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentNow.Infrastructure", "RentNow.Infrastructure\RentNow.Infrastructure.csproj", "{9CBA1D54-1F6C-406D-B0C2-CD91C223196D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentNow.Infrastructure", "RentNow.Infrastructure\RentNow.Infrastructure.csproj", "{9CBA1D54-1F6C-406D-B0C2-CD91C223196D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{71428AC5-317B-49BC-AA58-DA15B9F927A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentNow.Application", "RentNow.Application\RentNow.Application.csproj", "{91A6AE30-09F6-4BEB-9463-2AB82421EFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentNow.Application", "RentNow.Application\RentNow.Application.csproj", "{91A6AE30-09F6-4BEB-9463-2AB82421EFCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A2F740E1-2741-41A9-BE46-429875C4CB7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentNow.Presentation.WebAPI", "RentNow.Presentation.WebAPI\RentNow.Presentation.WebAPI.csproj", "{44F2E30B-F155-4AFC-9E77-362023F6F0C5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Qa", "Qa", "{2DF8F771-6352-4867-8CA7-F55791141B1D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentNow.Qa.Tests", "RentNow.Qa.Tests\RentNow.Qa.Tests.csproj", "{6AD18F50-B587-487C-8847-3CF073E11039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentNow.Presentation.WebAPI", "RentNow.Presentation.WebAPI\RentNow.Presentation.WebAPI.csproj", "{44F2E30B-F155-4AFC-9E77-362023F6F0C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +41,6 @@ Global
 		{44F2E30B-F155-4AFC-9E77-362023F6F0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44F2E30B-F155-4AFC-9E77-362023F6F0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44F2E30B-F155-4AFC-9E77-362023F6F0C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AD18F50-B587-487C-8847-3CF073E11039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AD18F50-B587-487C-8847-3CF073E11039}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AD18F50-B587-487C-8847-3CF073E11039}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AD18F50-B587-487C-8847-3CF073E11039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,7 +50,6 @@ Global
 		{9CBA1D54-1F6C-406D-B0C2-CD91C223196D} = {7B7F5239-0E04-4B9E-87E2-E196DB300844}
 		{91A6AE30-09F6-4BEB-9463-2AB82421EFCC} = {71428AC5-317B-49BC-AA58-DA15B9F927A8}
 		{44F2E30B-F155-4AFC-9E77-362023F6F0C5} = {A2F740E1-2741-41A9-BE46-429875C4CB7F}
-		{6AD18F50-B587-487C-8847-3CF073E11039} = {2DF8F771-6352-4867-8CA7-F55791141B1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B333CD5-CE60-49A9-A9E5-E3838FFDEBDD}

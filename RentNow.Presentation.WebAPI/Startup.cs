@@ -28,11 +28,13 @@ namespace RentNow.Presentation.WebAPI
         }
 
         public IConfiguration Configuration { get; }
+        private const string Issuer = "https://localhost:5001";
+        private const string Secret = "VeryHyperMegaSuperSecretKey";
+        private const string Audience = "https://localhost:5001";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var jwtSettings = Configuration.GetSection("Jwt").Get<JwtSettings>();
             services.AppRegister();
             services.InfraRegister(Configuration);
 
@@ -49,9 +51,9 @@ namespace RentNow.Presentation.WebAPI
                     options.RequireHttpsMetadata = false;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidIssuer = jwtSettings.Issuer,
-                        ValidAudiences = jwtSettings.Audience,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
+                        ValidIssuer = Issuer,
+                        ValidAudiences = new List<string> { Audience },
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Secret)),
                         ClockSkew = TimeSpan.Zero,
                     };
                 });

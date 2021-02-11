@@ -10,13 +10,14 @@ namespace RentNow.Domain.Entities
     public class Credentials : BaseEntity<Guid>
     {
         public string Login { get; set; }
+        private string password;
         public string Password
         {
-            get => Password;
+            get => password;
             set
             {
                 Salt = GenerateRandomSalt();
-                Password = Hash(value, Salt);
+                password = Hash(value, Salt);
             }
         }
         public string Salt { get; set; }
