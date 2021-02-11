@@ -20,8 +20,7 @@
     Role:
         Operador = 1,
         Client = 2
- 
-<br><br>
+
 # Percentual de acréscimo por categoria.<br>
      Tomei a liberdade de acrescentar um percentual extra de acordo com a categoria do veículo.
      Categorias: 
